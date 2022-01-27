@@ -1,19 +1,29 @@
-# GM
+# Good Morning
 
-To start your Phoenix server:
+Good Morning is a micro-ERP oriented for small and connected team.
+It provides simple ERP features but also a lot of realtime features for employees.
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+## Features
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+### V1
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+ - [ ] Authentication
+ - [ ] Admin can manage roles & accounts
+ - [ ] User profiles
+ - [ ] Projects & Team
+ - [ ] Live chat & connected user
+ - [ ] WebRTC Room
 
-## Learn more
+## Deploy your own
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+You can customize the colors, logo and name of the application.
+
+ - colors: Edit assets/styles/_theme.scss with the colors of your choice
+ - logo: override pictures in assets/images/
+ - name: edit config/confix.exs
+
+Check out our post for hosting a Phoenix app on Clever Cloud: https://blog.kalvad.com/deploy-phoenix-application-clevercloud/
+
+## Contribute
+
+ * Open a pull request
