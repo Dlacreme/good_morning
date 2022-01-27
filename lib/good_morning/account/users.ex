@@ -7,43 +7,17 @@ defmodule GM.Account.Users do
   @foreign_key_type :binary_id
   schema "users" do
     field :email, :string
-    field :joined_at, :naive_datetime
-    field :left_at, :naive_datetime
+    field :joined_at, :utc_datetime
+    field :left_at, :utc_datetime
     field :name, :string
     field :password, :string
     field :phone_number, :string
     field :picture_url, :string
     field :role_id, :string
     field :title, :string
+    field :birthdate, :utc_datetime
 
     timestamps(updated_at: false)
-  end
-
-  @doc false
-  def changeset(users, attrs) do
-    users
-    |> cast(attrs, [
-      :role_id,
-      :name,
-      :email,
-      :password,
-      :joined_at,
-      :left_at,
-      :title,
-      :picture_url,
-      :phone_number
-    ])
-    |> validate_required([
-      :role_id,
-      :name,
-      :email,
-      :password,
-      :joined_at,
-      :left_at,
-      :title,
-      :picture_url,
-      :phone_number
-    ])
   end
 
   @doc false
@@ -58,7 +32,8 @@ defmodule GM.Account.Users do
       :left_at,
       :title,
       :picture_url,
-      :phone_number
+      :phone_number,
+      :birthdate
     ])
     |> validate_required([:email, :password, :role_id])
     |> validate_email()
