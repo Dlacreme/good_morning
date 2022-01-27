@@ -55,7 +55,7 @@ defmodule GMWeb.PlugController do
 
   defp not_found(conn) do
     conn
-    |> put_view(LogMeWeb.ErrorView)
+    |> put_view(GMWeb.ErrorView)
     |> render("404.html")
     |> halt()
   end
