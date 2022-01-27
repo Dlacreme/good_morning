@@ -20,7 +20,7 @@ defmodule GMWeb.Endpoint do
     at: "/",
     from: :good_morning,
     gzip: false,
-    only: ~w(assets fonts images favicon.ico robots.txt)
+    only: ~w(assets fonts images favicon.ico robots.txt dist)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.

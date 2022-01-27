@@ -94,6 +94,7 @@ defmodule GMWeb do
 
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
+      import GMWeb.HTMLHelpers
 
       import GMWeb.ErrorHelpers
       import GMWeb.Gettext

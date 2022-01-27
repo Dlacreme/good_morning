@@ -1,0 +1,18 @@
+button {
+  border: 0;
+  outline: 0;
+  border-radius: 4px;
+  background-color: $color-background;
+  @include flexbox();
+  @include justify-content(center);
+  @include align-items(center);
+  height: 34px;
+  color: $color-background-dark;
+  font-weight: bold;
+  cursor: pointer;
+  min-width: 34px;
+
+  &:hover {
+    color: white;
+  }
+}

@@ -19,7 +19,7 @@ It provides simple ERP features but also a lot of realtime features for employee
 You can customize the colors, logo and name of the application.
 
  - colors: Edit assets/styles/_theme.scss with the colors of your choice
- - logo: override pictures in assets/images/
+ - logo: override pictures in assets/images/ & assets/favicon.ico
  - name: edit config/confix.exs
 
 Check out our post for hosting a Phoenix app on Clever Cloud: https://blog.kalvad.com/deploy-phoenix-application-clevercloud/
