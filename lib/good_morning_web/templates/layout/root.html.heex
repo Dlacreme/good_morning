@@ -20,11 +20,17 @@
         <div class="title">
             <a href="/">
                 <img src={Routes.static_path(@conn, "/images/logo.png")} alt="logo" |>
-                <h1>CoCode</h1>
+                <h1>Good Morning</h1>
             </a>
         </div>
         <%= if Map.has_key?(@conn.assigns, :current_user) do %>
-        Current user menu
+        <div class="flex flex-all-center pointer" onclick="window.APP.visibility.switch('user-menu')">
+        <%= user_name @current_user %>
+        <%= icon "expand_more" %>
+        </div>
+        <div id="user-menu" class="user-menu hidden">
+            Menu
+        </div>
         <% end %>
       </section>
     </header>

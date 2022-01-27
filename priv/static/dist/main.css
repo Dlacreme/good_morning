@@ -123,6 +123,12 @@
   }
 }
 /** FLEXBOX */
+.pointer {
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
 .flex {
   display: -webkit-box;
   display: -moz-box;
@@ -218,6 +224,16 @@ main .container {
 h1, h2, h3, h4, h5, h6 {
   padding: 0;
   margin: 0;
+}
+.user-menu {
+  position: absolute;
+  right: 30px;
+  width: 200px;
+  padding: 12px;
+  border-radius: 8px;
+  top: 53px;
+  box-shadow: 0 0 1px 0px #555;
+  background-color: #1c1e26;
 }
 #cc-notif-container {
   position: fixed;
