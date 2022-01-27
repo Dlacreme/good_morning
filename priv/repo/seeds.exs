@@ -1,11 +1,8 @@
-# Script for populating the database. You can run it as:
-#
-#     mix run priv/repo/seeds.exs
-#
-# Inside the script, you can read and write to any of your
-# repositories directly:
-#
-#     GM.Repo.insert!(%GM.SomeSchema{})
-#
-# We recommend using the bang functions (`insert!`, `update!`
-# and so on) as they will fail if something goes wrong.
+%GM.Account.Users{}
+|> GM.Account.Users.changeset_register(%{
+  email: "good@morning.com",
+  password: "toto4242",
+  role_id: "admin",
+  joined_at: DateTime.utc_now()
+})
+|> GM.Repo.insert()

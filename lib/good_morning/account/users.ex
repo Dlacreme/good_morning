@@ -1,6 +1,7 @@
 defmodule GM.Account.Users do
   use Ecto.Schema
   import Ecto.Changeset
+  alias GM.Repo
 
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
@@ -68,7 +69,7 @@ defmodule GM.Account.Users do
     changeset
     |> validate_format(:email, ~r/^[^\s]+@[^\s]+$/, message: "invalid email")
     |> validate_length(:email, max: 160)
-    |> unsafe_validate_unique(:email, LogMe.Repo)
+    |> unsafe_validate_unique(:email, Repo)
     |> unique_constraint(:email)
   end
 

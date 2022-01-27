@@ -123,6 +123,46 @@
   }
 }
 /** FLEXBOX */
+.flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+.flex-col {
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.flex-align-center {
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+}
+.flex-justify-center {
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+}
+.flex-all-center {
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+}
+.flex-grow {
+  flex-grow: 1;
+}
 html, body, main, .full {
   padding: 0;
   margin: 0;
@@ -175,6 +215,10 @@ header section .title {
 main .container {
   height: 100%;
 }
+h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
+}
 #cc-notif-container {
   position: fixed;
   bottom: 20px;
@@ -216,20 +260,6 @@ main .container {
 }
 #cc-notif-container .cc-notif.error {
   color: red;
-}
-h1, h2, h3, h4, h5, h6 {
-  padding: 0;
-  margin: 0;
-}
-.row {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-}
-.flex-grow {
-  flex-grow: 1;
 }
 a {
   color: #30aad7;
