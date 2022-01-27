@@ -5,12 +5,12 @@ defmodule GM.Account.Tokens do
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
   schema "tokens" do
-    field :deprecated_at, :naive_datetime
+    field :deprecated_at, :utc_datetime
     field :token, :string
-    field :type_id, :string
-    field :user_id, :binary
+    belongs_to :user, GM.Account.Users
+    belongs_to :type, GM.Account.TokenTypes, type: :string
 
-    timestamps()
+    timestamps(updated_at: false)
   end
 
   @doc false

@@ -1,6 +1,8 @@
 defmodule GMWeb.Router do
   use GMWeb, :router
 
+  import GMWeb.PlugController
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -8,6 +10,7 @@ defmodule GMWeb.Router do
     plug :put_root_layout, {GMWeb.LayoutView, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug :fetch_current_user
   end
 
   scope "/", GMWeb do
