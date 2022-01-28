@@ -21,6 +21,18 @@ defmodule GMWeb.Router do
     post "/login", AuthController, :login_post
   end
 
+  scope "/user", GMWeb do
+    pipe_through [:browser, :require_authenticated_user]
+
+    get "/profile", UserController, :profile
+  end
+
+  scope "/admin", GMWeb do
+    pipe_through [:browser, :require_authenticated_admin]
+
+    get "/", AdminController, :index
+  end
+
   scope "/phoenix" do
     import Phoenix.LiveDashboard.Router
 

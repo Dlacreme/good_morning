@@ -2,7 +2,8 @@ defmodule GMWeb.HTMLHelpers do
   use Phoenix.HTML
   alias GM.Account.Users
 
-  def icon(name), do: content_tag(:i, name, class: "material-icons")
+  def icon(name, props \\ []),
+    do: content_tag(:i, name, Keyword.merge(props, class: "material-icons"))
 
   def user_name(%Users{email: email, picture_url: picture_url, name: name}) do
     content_tag(

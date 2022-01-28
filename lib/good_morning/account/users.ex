@@ -13,9 +13,9 @@ defmodule GM.Account.Users do
     field :password, :string
     field :phone_number, :string
     field :picture_url, :string
-    field :role_id, :string
     field :title, :string
     field :birthdate, :utc_datetime
+    belongs_to :type, GM.Account.Types, type: :string
 
     timestamps(updated_at: false)
   end
@@ -24,7 +24,7 @@ defmodule GM.Account.Users do
   def changeset_register(users, attrs) do
     users
     |> cast(attrs, [
-      :role_id,
+      :type_id,
       :name,
       :email,
       :password,
@@ -35,7 +35,7 @@ defmodule GM.Account.Users do
       :phone_number,
       :birthdate
     ])
-    |> validate_required([:email, :password, :role_id])
+    |> validate_required([:email, :password, :type_id])
     |> validate_email()
     |> validate_password()
   end

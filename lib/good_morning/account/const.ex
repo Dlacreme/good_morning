@@ -9,7 +9,7 @@ defmodule GM.Account.Const do
     def account_validation, do: "account_validation"
   end
 
-  defmodule UserRole do
+  defmodule UserType do
     def admin, do: "admin"
     def user, do: "user"
   end

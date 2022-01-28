@@ -1,26 +1,32 @@
 defmodule GM.Repo.Migrations.CreateUsers do
   use Ecto.Migration
   alias GM.Repo
-  alias GM.Account.Roles
+  alias GM.Account.Types
 
   def change do
     execute "CREATE EXTENSION IF NOT EXISTS citext", ""
 
-    %Roles{
+    %Types{
       id: "admin",
       label: "Admin"
     }
     |> Repo.insert!()
 
-    %Roles{
+    %Types{
       id: "user",
       label: "User"
     }
     |> Repo.insert!()
 
+    %Types{
+      id: "guest",
+      label: "guest"
+    }
+    |> Repo.insert!()
+
     create table(:users, primary_key: false) do
       add :id, :binary_id, primary_key: true
-      add :role_id, :string, size: 255, default: "user"
+      add :type_id, references(:types, type: :string), default: "user"
       add :name, :string, size: 255, null: true
       add :email, :citext, null: false
       add :password, :string

@@ -27,21 +27,21 @@ defmodule GMWeb.PlugController do
   end
 
   def require_authenticated_user(conn, _opts) do
-    require_authenticate_role(conn, [
-      GM.Account.Const.UserRole.user(),
-      GM.Account.Const.UserRole.admin()
+    require_authenticate_type(conn, [
+      GM.Account.Const.UserType.user(),
+      GM.Account.Const.UserType.admin()
     ])
   end
 
   def require_authenticated_admin(conn, _opts) do
-    require_authenticate_role(conn, [GM.Account.Const.UserRole.admin()])
+    require_authenticate_type(conn, [GM.Account.Const.UserType.admin()])
   end
 
-  defp require_authenticate_role(conn, role) do
+  defp require_authenticate_type(conn, type) do
     if Map.has_key?(conn.assigns, :current_user) && Map.fetch!(conn.assigns, :current_user) != nil do
       user = Map.fetch!(conn.assigns, :current_user)
 
-      if user.role_id in role do
+      if user.type_id in type do
         conn
       else
         conn

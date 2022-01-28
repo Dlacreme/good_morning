@@ -24,12 +24,16 @@
             </a>
         </div>
         <%= if Map.has_key?(@conn.assigns, :current_user) do %>
-        <div class="flex flex-all-center pointer" onclick="window.APP.visibility.switch('user-menu')">
+        <div class="flex flex-all-center pointer" onclick="window.APP.visibility.switch('user-menu');window.APP.props.switch('user-menu-arrow', 'rotate-180')">
         <%= user_name @current_user %>
-        <%= icon "expand_more" %>
+        <%= icon "expand_more", id: "user-menu-arrow" %>
         </div>
         <div id="user-menu" class="user-menu hidden">
-            Menu
+        <nav>
+        <a href={Routes.user_path(@conn, :profile)}>
+        <%= gettext "Profile" %>
+        </a>
+        </nav>
         </div>
         <% end %>
       </section>

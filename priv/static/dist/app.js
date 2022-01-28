@@ -57,6 +57,56 @@ class Notif {
     return document.getElementById(this.notifContainerId);
   }
 }
+class Props {
+  constructor() {
+  }
+  add(el_id, classname) {
+    const el = document.getElementById(el_id);
+    if (!el) {
+      console.debug(`${el_id} missing from DOM`);
+      return;
+    }
+    el.classList.add(classname);
+  }
+  remove(el_id, classname) {
+    const el = document.getElementById(el_id);
+    if (!el) {
+      console.debug(`${el_id} missing from DOM`);
+      return;
+    }
+    el.classList.remove(classname);
+  }
+  switch(el_id, classname) {
+    const el = document.getElementById(el_id);
+    if (!el) {
+      console.debug(`${el_id} missing from DOM`);
+      return;
+    }
+    el.classList.contains(classname) ? el.classList.remove(classname) : el.classList.add(classname);
+  }
+}
+class Visibility {
+  constructor() {
+    this.hiddenClass = "hidden";
+  }
+  switch(el_id) {
+    const el = document.getElementById(el_id);
+    if (!el) {
+      console.debug(`${el_id} missing from DOM`);
+      return;
+    }
+    el.classList.contains(this.hiddenClass) ? el.classList.remove(this.hiddenClass) : el.classList.add(this.hiddenClass);
+  }
+  rotate(el_id, deg) {
+    const el = document.getElementById(el_id);
+    if (!el) {
+      console.debug(`${el_id} missing from DOM`);
+      return;
+    }
+  }
+}
 window.APP = {
+  visibility: new Visibility(),
+  props: new Props(),
   notif: new Notif()
 };
