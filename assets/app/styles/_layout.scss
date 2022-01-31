@@ -16,6 +16,10 @@
   animation: linear all 200ms;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 // Flex helpers
 .flex {
   @include flexbox();
@@ -43,12 +47,13 @@ html, body, main, .full {
   margin: 0;
   width: 100%;
   height: 100%;
+  box-sizing: border-box;
 }
 
 body {
   @include flexbox();
   @include flex-direction(column);
-  background-color: $color-background-dark;
+  background-color: $color-background-accent;
   color: $color-font;
   font-family: 'Lato', sans-serif;
 }
@@ -76,6 +81,11 @@ header {
   }
 }
 
+main {
+  background-color: $color-background;
+  padding: 30px;
+}
+
 main .container {
   height: 100%;
 }
@@ -94,7 +104,15 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 8px;
   top: 53px;
   box-shadow: 0 0 1px 0px #555;
-  background-color: $color-background-dark;
+  background-color: $color-background-accent;
+
+  nav {
+    @include flexbox();
+    @include flex-direction(column);
+    a {
+      padding: 4px 2px;
+    }
+  }
 }
 
 // Notifications

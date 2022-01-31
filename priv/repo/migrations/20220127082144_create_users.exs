@@ -33,6 +33,7 @@ defmodule GM.Repo.Migrations.CreateUsers do
       add :joined_at, :utc_datetime, null: false
       add :left_at, :utc_datetime, null: true
       add :title, :string, size: 1024, null: true
+      add :bio, :string, size: 4096, null: true
       add :picture_url, :string, size: 1024, null: true
       add :phone_number, :string, size: 1024, null: true
       add :birthdate, :utc_datetime, null: true

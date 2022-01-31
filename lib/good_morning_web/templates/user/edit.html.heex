@@ -1,0 +1,16 @@
+<div>
+<h2><%= user_name @user %></h2>
+
+<%= form_for @changeset, Routes.user_path(@conn, :edit), fn f -> %>
+<div class="field">
+    <label>Name</label>
+    <%= text_input f, :name %>
+</div>
+
+<div class="field">
+    <label>email</label>
+    <%= text_input f, :email %>
+</div>
+<% end %>
+
+</div>

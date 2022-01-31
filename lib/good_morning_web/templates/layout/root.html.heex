@@ -23,17 +23,23 @@
                 <h1>Good Morning</h1>
             </a>
         </div>
-        <%= if Map.has_key?(@conn.assigns, :current_user) do %>
+        <%= if Map.has_key?(@conn.assigns, :current_user) && @current_user != nil do %>
         <div class="flex flex-all-center pointer" onclick="window.APP.visibility.switch('user-menu');window.APP.props.switch('user-menu-arrow', 'rotate-180')">
-        <%= user_name @current_user %>
+        <%= user_name_with_pic @current_user %>
         <%= icon "expand_more", id: "user-menu-arrow" %>
         </div>
         <div id="user-menu" class="user-menu hidden">
-        <nav>
-        <a href={Routes.user_path(@conn, :profile)}>
-        <%= gettext "Profile" %>
-        </a>
-        </nav>
+            <nav>
+                <a href={Routes.user_path(@conn, :index)}>
+                <%= gettext "Profile" %>
+                </a>
+
+                <%= if @current_user.type_id == "admin" do %>
+                <a href={Routes.admin_path(@conn, :index)}>
+                <%= gettext "Admin" %>
+                </a>
+                <% end %>
+            </nav>
         </div>
         <% end %>
       </section>

@@ -13,6 +13,7 @@ defmodule GM.Account.Users do
     field :password, :string
     field :phone_number, :string
     field :picture_url, :string
+    field :bio, :string
     field :title, :string
     field :birthdate, :utc_datetime
     belongs_to :type, GM.Account.Types, type: :string
@@ -32,6 +33,7 @@ defmodule GM.Account.Users do
       :left_at,
       :title,
       :picture_url,
+      :bio,
       :phone_number,
       :birthdate
     ])

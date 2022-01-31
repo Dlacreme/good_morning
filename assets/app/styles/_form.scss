@@ -7,7 +7,7 @@ button {
   @include justify-content(center);
   @include align-items(center);
   height: 34px;
-  color: $color-background-dark;
+  color: $color-background-accent;
   font-weight: bold;
   cursor: pointer;
   min-width: 34px;
@@ -15,4 +15,16 @@ button {
   &:hover {
     color: white;
   }
+}
+
+.input-row {
+  margin: 4px;
+}
+
+input, textarea {
+  background-color: $color-input-background;
+  color: $color-input-text;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid $color-input-border;
 }

@@ -24,7 +24,9 @@ defmodule GMWeb.Router do
   scope "/user", GMWeb do
     pipe_through [:browser, :require_authenticated_user]
 
-    get "/profile", UserController, :profile
+    get "/", UserController, :index
+    get "/:id", UserController, :index
+    post "/edit/", UserController, :edit
   end
 
   scope "/admin", GMWeb do
